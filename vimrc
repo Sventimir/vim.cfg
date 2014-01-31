@@ -113,7 +113,7 @@ autocmd BufWinEnter *.* silent loadview     " Load folds on re-opening file
 nnoremap ; :
 nnoremap <silent> <press Ctrl-PageUp> :tabprev
 nnoremap <silent> <press Ctrl-PageDown> :tabnext
-nnoremap <silent> <press Ctrl-N> :tabnew
+nnoremap <silent> <press Ctrl-N> :tabnew<CR>
 noremap <C-n> :tabnew 
 nnoremap <silent> f zo  " Unfold
 nnoremap <silent> F zc  " Fold
@@ -121,7 +121,6 @@ nnoremap <silent> <Leader>f zR  " Unfold all
 nnoremap <silent> <Leader>F zM  " Fold all
 nnoremap <silent> <C-b> :ConqueTermVSplit /usr/bin/env bash<CR>
 nnoremap <silent> B :ConqueTerm /usr/bin/env bash<CR>
-nnoremap <silent> <C-t> :tabnew<CR>
 " Session management:
 nnoremap <silent> <F3> :SaveSession<CR>    " Save as default
 nnoremap <S-F3> :SaveSession
@@ -146,8 +145,8 @@ noremap <silent> <A-Down> <C-w><Down>
 noremap! <silent> <A-Down> <C-w><Down>
 
 " Python interpreter:
-nnoremap <C-p> :python 
-nnoremap <silent> <C-Y> :python unittest.main()<CR>
+nnoremap <C-p> :python3 
+nnoremap <silent> <C-Y> :python3 unittest.main()<CR>
 
 " GHCi:
 nnoremap <C-g> :GHCi -XFlexibleInstances
