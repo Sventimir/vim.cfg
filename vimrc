@@ -131,6 +131,9 @@ nnoremap <silent> <F5> :RestartVim<CR>
 let g:session_autosave = "yes"
 let g:session_autoload = "no"
 
+" snipMate
+let g:snips_author = "Sventimir"
+
 " Command mode:
 cnoremap \fn <C-R>=expand("%:t")<CR>
 
