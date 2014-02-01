@@ -1,7 +1,7 @@
-Sventimir's vim configuration. Feel free to copy and share wherever youb want.
+Sventimir's vim configuration. Feel free to copy and share wherever you want.
 
-DEPENDANCIES:
-    * Vim compiled with Python (in Debian delivered by vim-nix package).
+DEPENDENCIES:
+    * Vim compiled with Python (in Debian delivered by vim-nox package).
     * Python module jedi.
     * GHC - if you intend to work with Haskell source code.
 
