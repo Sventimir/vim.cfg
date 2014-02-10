@@ -138,8 +138,8 @@ let g:snips_author = "Sventimir"
 cnoremap \fn <C-R>=expand("%:t")<CR>
 
 " All modes:
-noremap <silent> <A-Left> <C-w><Left>
-noremap <silent> <A-Up> :tabprev<CR>
+noremap <silent> <A-Left> :tabprev<CR>
+noremap <silent> <A-Up> <C-w><Up>
 noremap! <silent> <A-Up> <C-w><Up>
 noremap <silent> <A-Right> :tabnext<CR>
 noremap <silent> <A-Down> <C-w><Down>
