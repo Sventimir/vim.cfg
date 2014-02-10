@@ -139,11 +139,9 @@ cnoremap \fn <C-R>=expand("%:t")<CR>
 
 " All modes:
 noremap <silent> <A-Left> <C-w><Left>
-noremap! <silent> <A-Left> <C-w><Left>
-noremap <silent> <A-Up> <C-w><Up>
+noremap <silent> <A-Up> :tabprev<CR>
 noremap! <silent> <A-Up> <C-w><Up>
-noremap <silent> <A-Right> <C-w><Right>
-noremap! <silent> <A-Right> <C-w><Right>
+noremap <silent> <A-Right> :tabnext<CR>
 noremap <silent> <A-Down> <C-w><Down>
 noremap! <silent> <A-Down> <C-w><Down>
 
