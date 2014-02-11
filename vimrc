@@ -112,7 +112,7 @@ autocmd BufWinEnter *.* silent loadview     " Load folds on re-opening file
 " Shortcut mappings:
 " Normal mode:
 nnoremap ; :
-nnoremap . ;    " ; normally goes to next char previously searched with f/t.
+nnoremap : ;    " ; normally goes to next char previously searched with f/t.
 nnoremap <silent> <press Ctrl-PageUp> :tabprev
 nnoremap <silent> <press Ctrl-PageDown> :tabnext
 nnoremap <silent> <press Ctrl-N> :tabnew<CR>
