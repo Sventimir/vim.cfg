@@ -75,8 +75,9 @@ set colorcolumn=80
 set fo-=t
 set nowrap
 
-" Mapleader:
+" Environment variables
 let mapleader=","       " Replaces standard mapleader (\)
+let textwidth=80        " Helps with formatting.
 
 " Statusline:
 set laststatus=2
