@@ -75,8 +75,9 @@ set colorcolumn=80
 set fo-=t
 set nowrap
 
-" Mapleader:
+" Environment variables
 let mapleader=","       " Replaces standard mapleader (\)
+let textwidth=80        " Helps with formatting.
 
 " Statusline:
 set laststatus=2
@@ -111,12 +112,11 @@ autocmd BufWinEnter *.* silent loadview     " Load folds on re-opening file
 " Shortcut mappings:
 " Normal mode:
 nnoremap ; :
+nnoremap : ;    " ; normally goes to next char previously searched with f/t.
 nnoremap <silent> <press Ctrl-PageUp> :tabprev
 nnoremap <silent> <press Ctrl-PageDown> :tabnext
 nnoremap <silent> <press Ctrl-N> :tabnew<CR>
 noremap <C-n> :tabnew 
-nnoremap <silent> f zo  " Unfold
-nnoremap <silent> F zc  " Fold
 nnoremap <silent> <Leader>f zR  " Unfold all
 nnoremap <silent> <Leader>F zM  " Fold all
 nnoremap <silent> <C-b> :ConqueTermVSplit /usr/bin/env bash<CR>
@@ -148,6 +148,7 @@ noremap! <silent> <A-Down> <C-w><Down>
 " Python interpreter:
 nnoremap <C-p> :python3 
 nnoremap <silent> <C-Y> :python3 unittest.main()<CR>
+let g:syntastic_python_checker = "pylint"
 
 " GHCi:
 nnoremap <C-g> :GHCi -XFlexibleInstances
@@ -155,6 +156,7 @@ nnoremap <silent> <C-G> :GHCi main<CR>
 
 " Haskell programming support:
 au BufEnter *.hs compiler ghc
+:let g:ghc="/usr/bin/ghc-6.6.1"
 :let g:haddock_browser="/usr/bin/google-chrome"
 
 " Source a global configuration file if available
