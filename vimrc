@@ -90,7 +90,7 @@ set smartcase           " Do smart case matching
 set incsearch           " Incremental search
 set showmatch           " Show matching brackets
 set hlsearch            " Highlight all search pattern amatches
-nmap <silent> <Leader>/ :nohlsearch<CR>    " Clear searching buffer so that highligt disappears
+nmap <silent> <Leader>/ ;nohlsearch<CR>    " Clear searching buffer so that highligt disappears
 
 " Indentation and tabulation
 set tabstop=4
