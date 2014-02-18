@@ -90,7 +90,7 @@ set smartcase           " Do smart case matching
 set incsearch           " Incremental search
 set showmatch           " Show matching brackets
 set hlsearch            " Highlight all search pattern amatches
-nmap <silent> <Leader>/ :nohlsearch<CR>    " Clear searching buffer so that highligt disappears
+nmap <silent> <Leader>/ ;nohlsearch<CR>    " Clear searching buffer so that highligt disappears
 
 " Indentation and tabulation
 set tabstop=4
@@ -112,7 +112,9 @@ autocmd BufWinEnter *.* silent loadview     " Load folds on re-opening file
 " Shortcut mappings:
 " Normal mode:
 nnoremap ; :
+vnoremap ; :
 nnoremap : ;    " ; normally goes to next char previously searched with f/t.
+vnoremap : ;    " ; normally goes to next char previously searched with f/t.
 vnoremap . :norm.<CR> " . working in visual mode.
 nnoremap <silent> <press Ctrl-PageUp> :tabprev
 nnoremap <silent> <press Ctrl-PageDown> :tabnext
