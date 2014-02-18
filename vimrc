@@ -151,7 +151,7 @@ noremap! <silent> <A-Down> <C-w><Down>
 " Python interpreter:
 nnoremap <C-p> :python3 
 nnoremap <silent> <C-Y> :python3 unittest.main()<CR>
-let g:syntastic_python_checker = "pylint"
+let g:syntastic_python_checkers = ["pylint"]
 
 " GHCi:
 nnoremap <C-g> :GHCi -XFlexibleInstances
