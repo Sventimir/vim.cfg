@@ -131,7 +131,7 @@ nnoremap <silent> <F4> :OpenSession<CR>    " Open default
 nnoremap <S-F4> :OpenSession
 nnoremap <silent> <F10> :CloseSession<CR>
 nnoremap <silent> <F5> :RestartVim<CR>
-let g:session_autosave = "yes"
+let g:session_autosave = "no"
 let g:session_autoload = "no"
 
 " snipMate
