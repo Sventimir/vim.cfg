@@ -90,6 +90,7 @@ set smartcase           " Do smart case matching
 set incsearch           " Incremental search
 set showmatch           " Show matching brackets
 set hlsearch            " Highlight all search pattern amatches
+set magic               " Advance regexp. No need to escape special chars anymore
 nmap <silent> <Leader>/ ;nohlsearch<CR>    " Clear searching buffer so that highligt disappears
 
 " Indentation and tabulation
