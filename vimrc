@@ -120,7 +120,7 @@ vnoremap . :norm.<CR> " . working in visual mode.
 nnoremap <silent> <press Ctrl-PageUp> :tabprev
 nnoremap <silent> <press Ctrl-PageDown> :tabnext
 nnoremap <silent> <press Ctrl-N> :tabnew<CR>
-noremap <C-n> :tabnew 
+noremap <C-n> :tabnew
 nnoremap <silent> <Leader>f zR  " Unfold all
 nnoremap <silent> <Leader>F zM  " Fold all
 nnoremap <silent> <C-b> :ConqueTermVSplit /usr/bin/env bash<CR>
@@ -152,7 +152,7 @@ noremap <silent> <A-Down> <C-w><Down>
 noremap! <silent> <A-Down> <C-w><Down>
 
 " Python interpreter:
-nnoremap <C-p> :python3 
+nnoremap <C-p> :python3
 nnoremap <silent> <C-Y> :python3 unittest.main()<CR>
 let g:syntastic_python_checkers = ["pylint"]
 
@@ -170,3 +170,10 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+" Enable ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
