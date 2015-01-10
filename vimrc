@@ -123,8 +123,7 @@ nnoremap <silent> <press Ctrl-N> :tabnew<CR>
 noremap <C-n> :tabnew
 nnoremap <silent> <Leader>f zR  " Unfold all
 nnoremap <silent> <Leader>F zM  " Fold all
-nnoremap <silent> <C-b> :ConqueTermVSplit /usr/bin/env bash<CR>
-nnoremap <silent> B :ConqueTerm /usr/bin/env bash<CR>
+nnoremap <silent> <C-y> byw
 " Session management:
 nnoremap <silent> <F3> :SaveSession<CR>    " Save as default
 nnoremap <S-F3> :SaveSession
@@ -151,14 +150,7 @@ noremap! <silent> <A-Right> <C-w><Right>
 noremap <silent> <A-Down> <C-w><Down>
 noremap! <silent> <A-Down> <C-w><Down>
 
-" Python interpreter:
-nnoremap <C-p> :python3
-nnoremap <silent> <C-Y> :python3 unittest.main()<CR>
 let g:syntastic_python_checkers = ["pylint"]
-
-" GHCi:
-nnoremap <C-g> :GHCi -XFlexibleInstances
-nnoremap <silent> <C-G> :GHCi main<CR>
 
 " Haskell programming support:
 au BufEnter *.hs compiler ghc
