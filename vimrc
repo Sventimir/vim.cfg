@@ -154,8 +154,8 @@ let g:syntastic_python_checkers = ["pylint"]
 
 " Haskell programming support:
 au BufEnter *.hs compiler ghc
-:let g:ghc="/usr/bin/ghc-6.6.1"
-:let g:haddock_browser="/usr/bin/google-chrome"
+:let g:ghc="/usr/bin/ghc"
+:let g:haddock_browser="/usr/bin/chromium"
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
