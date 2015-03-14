@@ -134,9 +134,6 @@ nnoremap <silent> <F5> :RestartVim<CR>
 let g:session_autosave = "yes"
 let g:session_autoload = "no"
 
-" snipMate
-let g:snips_author = "Sventimir"
-
 " Command mode:
 cnoremap \fn <C-R>=expand("%:t")<CR>
 
@@ -162,6 +159,7 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+
 " Enable ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -169,3 +167,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["/usr/share/vim/vim74/vim-snippets/UltiSnips"]
