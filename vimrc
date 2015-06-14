@@ -15,6 +15,18 @@ runtime! archlinux.vim
 " options, so any other options should be set AFTER setting 'compatible'.
 set nocompatible
 
+" jedi-vim initialization:
+let g:jedi#auto_initialization=1
+let g:jedi#goto_assignments_command=1
+let g:jedi#goto_definitions_command=1
+let g:jedi#usages_command=1
+let g:jedi#rename_command=1
+let g:jedi#documentation_command=1
+let g:jedi#show_call_signatures=1
+let g:jedi#completions_enabled=1
+let g:jedi#auto_close_doc=1
+let g:jedi#auto_vim_configuration=1
+
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off
