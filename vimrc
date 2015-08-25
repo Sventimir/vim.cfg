@@ -161,8 +161,6 @@ noremap! <silent> <A-Down> <C-w><Down>
 
 let g:syntastic_python_checkers = ["pylint"]
 
-" Haskell programming support:
-au BufEnter *.hs compiler ghc
 :let g:ghc="/usr/bin/ghc"
 :let g:haddock_browser="/usr/bin/chromium"
 
