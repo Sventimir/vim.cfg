@@ -1,4 +1,4 @@
-*options.txt*	For Vim version 7.4.  Last change: 2015 Feb 17
+*options.txt*	For Vim version 7.4.  Last change: 2015 Jul 10
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar
@@ -1818,6 +1818,14 @@ A jump table for the options with a short description can be found at |Q_op|.
 	   preview  Show extra information about the currently selected
 		    completion in the preview window.  Only works in
 		    combination with "menu" or "menuone".
+
+	   noinsert Do not insert any text for a match until the user selects
+		    a match from the menu. Only works in combination with
+		    "menu" or "menuone". No effect if "longest" is present.
+
+	   noselect Do not select a match in the menu, force the user to
+		    select one from the menu. Only works in combination with
+		    "menu" or "menuone".
 
 
 						*'concealcursor'* *'cocu'*
@@ -7067,6 +7075,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	   split	If included, split the current window before loading
 			a buffer for a |quickfix| command that display errors.
 			Otherwise: do not split, use current window.
+	   vsplit	Just like "split" but split vertically.
 	   newtab	Like "split", but open a new tab page.  Overrules
 			"split" when both are present.
 
