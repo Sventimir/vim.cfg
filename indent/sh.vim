@@ -1,10 +1,11 @@
 " Vim indent file
-" Language:         Shell Script
-" Maintainer:       Currently unmaintained. If you want to take it, please
-" 		    email Bram
+" Language:            Shell Script
+" Maintainer:          Christian Brabandt <cb@256bit.org>
 " Previous Maintainer: Peter Aronoff <telemachus@arpinum.org>
-" Original Author:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:  2014-08-22
+" Original Author:     Nikolai Weibull <now@bitwi.se>
+" Latest Revision:     2016-02-15
+" License:             Vim (see :h license)
+" Repository:          https://github.com/chrisbra/vim-sh-indent
 
 if exists("b:did_indent")
   finish
@@ -12,10 +13,12 @@ endif
 let b:did_indent = 1
 
 setlocal indentexpr=GetShIndent()
-setlocal indentkeys+=0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,),0=;;,0=;&
+setlocal indentkeys+=0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&
 setlocal indentkeys+=0=fin,0=fil,0=fip,0=fir,0=fix
 setlocal indentkeys-=:,0#
 setlocal nosmartindent
+
+let b:undo_indent = 'setlocal indentexpr< indentkeys< smartindent<'
 
 if exists("*GetShIndent")
   finish
@@ -25,7 +28,7 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 function s:buffer_shiftwidth()
-  return &shiftwidth
+  return shiftwidth()
 endfunction
 
 let s:sh_indent_defaults = {
@@ -56,15 +59,15 @@ function! GetShIndent()
 
   let ind = indent(lnum)
   let line = getline(lnum)
-  if line =~ '^\s*\%(if\|then\|do\|else\|elif\|case\|while\|until\|for\|select\)\>'
-    if line !~ '\<\%(fi\|esac\|done\)\>\s*\%(#.*\)\=$'
+  if line =~ '^\s*\%(if\|then\|do\|else\|elif\|case\|while\|until\|for\|select\|foreach\)\>'
+    if line !~ '\<\%(fi\|esac\|done\|end\)\>\s*\%(#.*\)\=$'
       let ind += s:indent_value('default')
     endif
   elseif s:is_case_label(line, pnum)
     if !s:is_case_ended(line)
       let ind += s:indent_value('case-statements')
     endif
-  elseif line =~ '^\s*\<\k\+\>\s*()\s*{' || line =~ '^\s*{'
+  elseif line =~ '^\s*\<\k\+\>\s*()\s*{' || line =~ '^\s*{' || line =~ '^\s*function\s*\w\S\+\s*\%(()\)\?\s*{'
     if line !~ '}\s*\%(#.*\)\=$'
       let ind += s:indent_value('default')
     endif
@@ -78,7 +81,7 @@ function! GetShIndent()
 
   let pine = line
   let line = getline(v:lnum)
-  if line =~ '^\s*\%(then\|do\|else\|elif\|fi\|done\)\>' || line =~ '^\s*}'
+  if line =~ '^\s*\%(then\|do\|else\|elif\|fi\|done\|end\)\>' || line =~ '^\s*}'
     let ind -= s:indent_value('default')
   elseif line =~ '^\s*esac\>' && s:is_case_empty(getline(v:lnum - 1))
     let ind -= s:indent_value('default')
